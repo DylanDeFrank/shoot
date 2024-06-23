@@ -13,13 +13,34 @@ function getComputerChoice() {
     return 'scissors'  
     }
 }
+function getHumanChoice() {
   let answer = prompt('Choose rock, paper, or scissors') 
     if (answer == 'rock') {
-        alert('You have chosen rock!')
+        return 'rock'
     } else if (answer == 'paper') {
-        alert('You have chosen paper!')
+            return 'paper'
     } else if (answer == 'scissors') {
-        alert ('You have chosen scissors!')
-    } else {
-        alert ('Not recognized. Please input value exactly how it appears.')
+            return  'scissors'
+        } else {
+            return  ('Not recognized. Please input value exactly how it appears.')
+        }
     }
+
+const humanScore = 0
+const computerScore = 0 
+
+const ComputerChoice = getComputerChoice()
+const HumanChoice = getHumanChoice()
+function playRound (HumanChoice, ComputerChoice) {
+    if (HumanChoice == 'rock' && ComputerChoice == 'paper') {
+        return 'You lose. Paper beats rock.'
+    } else if (HumanChoice == 'rock' && ComputerChoice == 'scissors') {
+        return 'You win. Rock beats scissors.'
+    } else {
+        return 'You tied.'
+    }
+
+
+    }
+
+console.log(playRound())
